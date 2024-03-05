@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.title }}: {{ page.title }}</title>
+    <link rel="stylesheet" href="/site.css" />
+    <script>
+        onkeydown = (e) => {
+            {% if page.previous %}
+            if (e.key == "ArrowLeft") {
+                window.location.href = '{{ page.previous.url }}';
+            }
+            {% endif %}
+            {% if page.next %}
+            if (e.key == "ArrowRight") {
+                window.location.href = '{{ page.next.url }}';
+            }
+            {% endif %}
+        }
+    </script>
+  </head>
+  <body lang='en-US'>
+    <div class="example">
+        <h2><a href="/">{{ site.title }}</a>: {{ page.title }}</h2>
+
+        {{ content }}
+
+        {% if page.next %}
+        <p class="next">
+          Next example: <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+        </p>
+        {% endif %}
+    <div>
+    {% include footer.html %}
+  </body>
+</html>

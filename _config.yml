@@ -1,0 +1,44 @@
+show_dir_listing: false
+
+title: "Ruby by Example"
+
+collections:
+  examples:
+    output: true
+    order:
+      - hello-world.html
+      - values.html
+      - conditions.html
+      - errors.html
+      - inspection.html
+      - variables.html
+      - methods.html
+      - constants.html
+      - classes.html
+      - ancestry.html
+      - modules.html
+      - if-else.html
+      - for.html
+      - blocks.html
+      - arrays.html
+      - enumerables.html
+      - enumerators.html
+      - ranges.html
+      - strings.html
+      - symbols.html
+      - hashes.html
+      - case-when.html
+      - case-in.html
+
+exclude:
+  - .envrc
+  - shell.nix
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

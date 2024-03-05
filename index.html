@@ -1,0 +1,29 @@
+---
+layout: default
+title: Ruby by Example
+---
+<div id="intro">
+  <p>
+    <a href="https://ruby-lang.org">Ruby</a> is an
+    open source programming language designed with
+    a focus on simplicity and productivity.
+    Please read the official
+    <a href="https://www.ruby-lang.org/en/documentation/">documentation</a>
+    to learn a bit about Ruby code.
+  </p>
+
+  <p>
+    <em>Ruby by Example</em> is a hands-on introduction
+    to Ruby using annotated example programs. Check out
+    the <a href="{{ site.examples.hello-world.path }}">first example</a> or
+    browse the full list below.
+  </p>
+
+  <ul>
+    {% for example in site.examples %}
+      <li>
+        <a href="{{ example.url }}">{{ example.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+<div>
