@@ -15,14 +15,14 @@ title: Ruby by Example
   <p>
     <em>Ruby by Example</em> is a hands-on introduction
     to Ruby using annotated example programs. Check out
-    the <a href="{{ site.examples.hello-world.path }}">first example</a> or
+    the <a href="{{ site.examples.first.url | relative_url }}">first example</a> or
     browse the full list below.
   </p>
 
   <ul>
     {% for example in site.examples %}
       <li>
-        <a href="{{ example.url }}">{{ example.title }}</a>
+        <a href="{{ example.url | relative_url }}">{{ example.title }}</a>
       </li>
     {% endfor %}
   </ul>

@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="/site.css" />
+    <link rel="stylesheet" href="{{ 'site.css' | relative_url }}" />
   </head>
   <body lang='en-US'>
     <div id="intro">
-        <h2><a href="/">{{ site.title }}</a></h2>
+        <h2><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h2>
 
         {{ content }}
     <div>

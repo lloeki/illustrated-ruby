@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>{{ site.title }}: {{ page.title }}</title>
-    <link rel="stylesheet" href="/site.css" />
+    <link rel="stylesheet" href="{{ 'site.css' | relative_url }}" />
     <script>
         onkeydown = (e) => {
             {% if page.previous %}
             if (e.key == "ArrowLeft") {
-                window.location.href = '{{ page.previous.url }}';
+                window.location.href = '{{ page.previous.url | relative_url  }}';
             }
             {% endif %}
             {% if page.next %}
             if (e.key == "ArrowRight") {
-                window.location.href = '{{ page.next.url }}';
+                window.location.href = '{{ page.next.url | relative_url }}';
             }
             {% endif %}
         }
@@ -21,13 +21,13 @@
   </head>
   <body lang='en-US'>
     <div class="example">
-        <h2><a href="/">{{ site.title }}</a>: {{ page.title }}</h2>
+        <h2><a href="{{ '/' | relative_url }}">{{ site.title }}</a>: {{ page.title }}</h2>
 
         {{ content }}
 
         {% if page.next %}
         <p class="next">
-          Next example: <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+          Next example: <a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>
         </p>
         {% endif %}
     <div>
