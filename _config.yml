@@ -6,7 +6,7 @@ collections:
   examples:
     output: true
     order:
-      - hello-world.html
+      - hello_world.html
       - values.html
       - conditions.html
       - errors.html
