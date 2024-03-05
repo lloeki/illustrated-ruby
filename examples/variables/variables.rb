@@ -21,7 +21,7 @@ g, h = ["one", "two", "dropped"]
 p g, h
 
 # Variables are always references. Mutating the referenced value thus impacts
-# all other references. Here we append an additional value to the array.
+# all other references.
 i = ["foo", "bar"]
 p i
 j = i

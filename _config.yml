@@ -11,6 +11,10 @@ collections:
       - conditions.html
       - errors.html
       - inspection.html
+      - strings.html
+      - symbols.html
+      - arrays.html
+      - hashes.html
       - variables.html
       - methods.html
       - constants.html
@@ -20,7 +24,6 @@ collections:
       - if-else.html
       - for.html
       - blocks.html
-      - arrays.html
       - enumerables.html
       - enumerators.html
       - ranges.html

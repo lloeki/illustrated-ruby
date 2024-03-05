@@ -143,7 +143,7 @@ p eve.name
 p eve.age
 
 # We need to disambiguate the method from the local variable. For that we need
-# to specify the receiver: `self` is the keyword referring to the current
+# to specify the receiver: within `def`, `self` is the keyword referring to the current
 # instance.
 class Person
   def initialize(name, age)

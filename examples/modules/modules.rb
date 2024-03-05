@@ -1,3 +1,4 @@
+# [WIP]
 # Modules are the Ruby way to organise code.
 
 # Here's a module with a method.

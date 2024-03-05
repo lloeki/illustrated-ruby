@@ -11,7 +11,7 @@ p "this uses `p`"
 puts 1
 puts 2.to_s
 
-# Interpolation also calls `to_s`, then embeds the resulting string.
+# Interpolation also makes use of `to_s`, then embeds the resulting string.
 puts "this number became a string: #{1}"
 
 # We can now see a way to resolve the `TypeError` that we've seen before.
