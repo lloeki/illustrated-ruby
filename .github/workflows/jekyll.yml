@@ -24,6 +24,8 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Setup Ruby
         run: nix-shell --run 'ruby --version'
+      - name: Bundle Install
+        run: nix-shell --run 'bundle install'
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
