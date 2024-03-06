@@ -1,9 +1,9 @@
 {
   pkgs ? import <nixpkgs> {},
-  pinned ? import(fetchTarball("https://github.com/NixOS/nixpkgs/archive/d7f206b723e4.tar.gz")) {},
+  pinned ? import(fetchTarball("https://github.com/NixOS/nixpkgs/archive/fcb58d12a84794d45640a466f3cac9e85a19214e.tar.gz")) {},
 }:
 let
-  ruby = pinned.ruby_3_2;
+  ruby = pinned.ruby_3_3;
   llvm = pinned.llvmPackages_16;
   gcc = pinned.gcc13;
 in llvm.stdenv.mkDerivation {
