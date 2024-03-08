@@ -127,7 +127,7 @@ module Jekyll
 
       type = case ext
              when '.rb' then 'ruby'
-             when '.sh' then 'bash'
+             when '.sh' then 'console'
              else raise ArgumentError, "unhandled file type: #{ext}"
              end
 
