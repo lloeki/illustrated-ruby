@@ -39,11 +39,12 @@ module Jekyll
 
     def run_example_file(dir, file, ext)
       require 'open3'
+      require 'stringio'
 
       cmd = ['ruby', PathManager.join(dir, file) + ext]
 
       Open3.popen2e(*cmd) do |_stdin, stdouterr, wait_thr|
-        yield stdouterr
+        yield StringIO.new('$ ' << cmd.join(' ') << "\n" << stdouterr.read)
 
       ensure
         _rc = wait_thr.value
@@ -82,14 +83,26 @@ module Jekyll
     def render_example_io(io, ext)
       segment = parse_example(io, ext)
 
+      require 'cgi'
+      io.rewind
+
       out = +''
 
       out << '<table>'
 
+      code_added = false
       segment.each do |doc, (code, empty, leading)|
         out << '<tr>'
         out << '<td class="docs">' << render_comment(doc, ext) << '</td>'
-        out << '<td class="code' << (empty ? ' empty' : '') << (leading ? ' leading' : '') << '">' << render_code(code, ext) << '</td>'
+        out << '<td class="code' << (empty ? ' empty' : '') << (leading ? ' leading' : '') << '">'
+        if ext == '.rb' && !empty && !code_added
+          out << '<a href="https://try.ruby-lang.org/playground/#code=' << CGI.escape(io.read) << '&engine=cruby-3.2.0dev" target="_blank">'
+          out << '<img class="run" title=Run code" src="https://www.ruby-lang.org/favicon.ico" />'
+          out << '</a>'
+          code_added = true
+        end
+        out << render_code(code, ext)
+        out << '</td>'
         out << '</tr>'
       end
 
